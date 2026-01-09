@@ -43,3 +43,32 @@ After this step, run `eval_acc.py` to get the accuracy:
 ```
 python eval_acc.py --save_folder ./physlean_test_deepseek_prover_7b_n16
 ```
+
+## Reinforcement Learning using Verl
+
+Go to `/verl`
+
+We use `verl v0.6.0` version and please install from source.
+
+Process data:
+```
+python examples/data_preprocess/physicslean.py --local_dataset_path physicslean_ds_curri 
+```
+
+We have made some changes.
+
+We update `verl/utils/dataset/rl_dataset.py` to remove the chat template because we already have it in our dataset.
+
+We update `verl/workers/reward_manager/naive.py` to allow multi-process Lean4 evaluation.
+
+We update files in `verl/utils/reward_score/` to support Lean4 verification.
+
+Please install `PhysLean` in `verl/utils/reward_score/` directory following [Installation Guide](https://physlean.com/GettingStarted).
+
+Please also change `line 152` in `verl/utils/reward_score/physicslean.py` to your own path.
+
+Then you can run
+```
+bash examples/grpo_trainer/run_ds_prover.sh
+```
+
