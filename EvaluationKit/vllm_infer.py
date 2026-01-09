@@ -35,7 +35,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     llm = LLM(model=args.model,tensor_parallel_size=args.tensor_parallel_size, dtype = "float16",enforce_eager=True, gpu_memory_utilization=0.8,swap_space=32,trust_remote_code=True, max_model_len=4096*2)
     llm.llm_engine.tokenizer.tokenizer.add_bos_token = False
-    # llm.llm_engine.tokenizer._tokenizer.add_bos_token = False
+    # llm.llm_engine.tokenizer._tokenizer.add_bos_token = False     please try this if the above line does not work
     # Greedy decoding
     sampling_params = SamplingParams(n=args.n, temperature=args.temperature, max_tokens=args.max_tokens, top_p=0.95, seed=args.seed)
 

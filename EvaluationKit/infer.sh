@@ -1,1 +1,2 @@
+mkdir -p gen_data
 CUDA_VISIBLE_DEVICES=0 python vllm_infer.py --n 16 --temperature 1.0 --dataset data/physlean_test_deepseek.json --model deepseek-ai/DeepSeek-Prover-V2-7B --output_file gen_data/physlean_test_deepseek_prover_7b_n16.json 
