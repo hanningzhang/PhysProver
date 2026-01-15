@@ -111,7 +111,7 @@ class Lean4Client:
             except asyncio.TimeoutError:
                 proc.kill()  # Kill the hung process
                 await proc.wait()  # Clean up
-                return "ERROR", "ERROR: Command timed out"
+                return "error", "error: Command timed out"
 
         async def run_commands_in_batches(cmds, batch_size):
             semaphore = asyncio.Semaphore(batch_size)
