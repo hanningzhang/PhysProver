@@ -2,6 +2,8 @@
 
 For the Reinforcement Learning (RL) experiments, please go to `/verl` folder. For the Generation and Evaluation experiments, please go to `/EvaluationKit` folder.
 
+Our Model on Huggingface: https://huggingface.co/HanningZhang/PhysProver-7B
+
 ## Evaluation
 
 Go to `/EvaluationKit`
