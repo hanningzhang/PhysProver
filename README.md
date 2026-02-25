@@ -74,3 +74,8 @@ Then you can run
 bash examples/grpo_trainer/run_ds_prover.sh
 ```
 
+## Conjecture Generation
+
+Go to `/conjecture_prompt`
+
+We use `claude_formal_gen.py` to generate the conjecture statements.
